@@ -1,8 +1,8 @@
 require 'httparty'
 
-SCHEDULER.every '30s' do
+SCHEDULER.every '30s', allow_overlapping: false do
 
-  service_url = 'http://docker1.lib.virginia.edu:8001/healthcheck'
+  service_url = ENV[ 'DEPOSIT_SERVICE_URL' ]
   data_sink_sis = 'sis-depositauth'
   data_sink_mysql = 'mysql-depositauth'
 

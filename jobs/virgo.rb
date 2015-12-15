@@ -1,8 +1,8 @@
 require 'httparty'
 
-SCHEDULER.every '30s' do
+SCHEDULER.every '30s', allow_overlapping: false do
 
-  service_url = 'http://opacdev.lib.virginia.edu'
+  service_url = ENV[ 'VIRGO_URL' ]
   data_sink_ldap = 'virgo'
   begin
      response = HTTParty.get( service_url )

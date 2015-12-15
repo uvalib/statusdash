@@ -2,8 +2,8 @@ require 'httparty'
 
 SCHEDULER.every '30s', allow_overlapping: false do
 
-  service_url = ENV[ 'LIBRA_URL' ]
-  data_sink_ldap = 'libra'
+  service_url = ENV[ 'FIREHOSE_SERVICE_URL' ]
+  data_sink_ldap = 'oracle-firehose'
   begin
      response = HTTParty.get( service_url )
      if response.code == 200

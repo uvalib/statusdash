@@ -1,8 +1,8 @@
 require 'httparty'
 
-SCHEDULER.every '30s' do
+SCHEDULER.every '30s', allow_overlapping: false do
 
-  service_url = 'http://docker1.lib.virginia.edu:8010/healthcheck'
+  service_url = ENV[ 'USER_SERVICE_URL' ]
   data_sink_ldap = 'ldap-user'
   begin
      response = HTTParty.get( service_url )

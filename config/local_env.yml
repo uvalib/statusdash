@@ -1,0 +1,18 @@
+#
+# Environment specific definitions
+#
+
+# the virgo endpoint
+VIRGO_URL: 'http://opacdev.lib.virginia.edu'
+
+# the libra endpoint
+LIBRA_URL: 'http://libradev.lib.virginia.edu'
+
+# the user service healthcheck endpoint
+USER_SERVICE_URL: 'http://docker1.lib.virginia.edu:8010/healthcheck'
+
+# the deposit service healthcheck endpoint
+DEPOSIT_SERVICE_URL: 'http://docker1.lib.virginia.edu:8001/healthcheck'
+
+# the firehose service healthcheck endpoint
+FIREHOSE_SERVICE_URL: 'http://firehose2test.lib.virginia.edu:8081/firehose2/healthcheck'

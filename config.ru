@@ -1,6 +1,16 @@
 require 'dashing'
 
 configure do
+
+  #
+  # load environment variables from config/local_env.yml if it exists
+  #
+  env_file = File.join( 'config', 'local_env.yml')
+  yaml_file = File.exists?(env_file) ? YAML.load(File.open(env_file)) : nil
+  yaml_file.each do |key, value|
+    ENV[key.to_s] = value
+  end if yaml_file
+
   set :auth_token, 'YOUR_AUTH_TOKEN'
 
   helpers do
@@ -9,6 +19,7 @@ configure do
      # This method is run before accessing any resource.
     end
   end
+
 end
 
 map Sinatra::Application.assets_prefix do
