@@ -19,5 +19,9 @@ WORKDIR $APP_HOME
 ADD . $APP_HOME
 RUN bundle install
 
+# not sure why...
+RUN gem uninstall -I eventmachine
+RUN bundle install
+
 EXPOSE 3030
-#CMD dashing start
+CMD dashing start
