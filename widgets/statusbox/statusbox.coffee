@@ -5,7 +5,7 @@ class Dashing.Statusbox extends Dashing.Widget
 
   refreshWidgetState: =>
     node = $(@node)
-    node.removeClass('ok down')
+    node.removeClass('up down')
     node.addClass(@get('text').toLowerCase())
 
   ready: ->
