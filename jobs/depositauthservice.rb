@@ -1,6 +1,6 @@
 require 'httparty'
 
-SCHEDULER.every '20s' do
+SCHEDULER.every '30s' do
 
   service_url = 'http://docker1.lib.virginia.edu:8001/healthcheck'
   data_sink_sis = 'sis-depositauth'
@@ -8,6 +8,7 @@ SCHEDULER.every '20s' do
 
   begin
      response = HTTParty.get( service_url )
+
      if response['filesystem']['healthy'] == true
         send_event( data_sink_sis, { text: 'Up' })
      else
