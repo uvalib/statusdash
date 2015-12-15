@@ -1,16 +1,18 @@
 require 'httparty'
 
-SCHEDULER.every '10s' do
+SCHEDULER.every '20s' do
 
+  service_url = 'http://docker1.lib.virginia.edu:8010/healthcheck'
+  data_sink_ldap = 'ldap-user'
   begin
-     response = HTTParty.get('http://docker1.lib.virginia.edu:8010/healthcheck')
+     response = HTTParty.get( service_url )
      if response['ldap']['healthy'] == true
-        send_event('ldap', { text: 'Up' })
+        send_event( data_sink_ldap, { text: 'Up' })
      else
-        send_event('ldap', { text: 'Down' })
+        send_event( data_sink_ldap, { text: 'Down' })
      end
   rescue => e
-    send_event('ldap', { text: 'Down' })
+    send_event( data_sink_ldap, { text: 'Down' })
   end
 
 end
