@@ -6,7 +6,7 @@ SCHEDULER.every '30s', allow_overlapping: false do
   data_sink_ldap = 'oracle-firehose'
   begin
      response = HTTParty.get( service_url )
-     if response.code == 200
+     if response.code == 200 && response['ldap'] && response['ldap']['healthy'] == 'true'
         send_event( data_sink_ldap, { text: 'Up' })
      else
         send_event( data_sink_ldap, { text: 'Down' })
