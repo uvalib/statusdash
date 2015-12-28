@@ -1,5 +1,3 @@
-require 'httparty'
-
 SCHEDULER.every '30s', allow_overlapping: false do
 
   service_url = ENV[ 'DEPOSIT_SERVICE_URL' ]
@@ -7,15 +5,15 @@ SCHEDULER.every '30s', allow_overlapping: false do
   data_sink_mysql = 'mysql-depositauth'
 
   begin
-     response = HTTParty.get( service_url )
+     response = Requester.get( service_url )
 
-     if response['filesystem']['healthy'] == true
+     if response['filesystem'] && response['filesystem']['healthy'] == true
         send_event( data_sink_sis, { text: 'Up' })
      else
         send_event( data_sink_sis, { text: 'Down' })
      end
 
-     if response['mysql']['healthy'] == true
+     if response['mysql'] && response['mysql']['healthy'] == true
        send_event( data_sink_mysql, { text: 'Up' })
      else
        send_event( data_sink_mysql, { text: 'Down' })

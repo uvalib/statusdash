@@ -1,5 +1,3 @@
-require 'httparty'
-
 SCHEDULER.every '30s', allow_overlapping: false do
 
   service_url = ENV[ 'LIBRA_URL' ]
@@ -9,7 +7,7 @@ SCHEDULER.every '30s', allow_overlapping: false do
 
   begin
      start_time = Time.now
-     response = HTTParty.get( service_url )
+     response = Requester.get( service_url )
      end_time = Time.now
      if response.code == 200
         response_time = ( ( end_time - start_time ).to_f * 1000 ).to_i
