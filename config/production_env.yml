@@ -1,0 +1,21 @@
+#
+# Environment specific definitions
+#
+
+# our title
+DASHBOARD_TITLE: 'Production Dashboard'
+
+# the virgo endpoint
+VIRGO_URL: 'http://search.lib.virginia.edu/'
+
+# the libra endpoint
+LIBRA_URL: 'http://libra.virginia.edu/'
+
+# the user service healthcheck endpoint
+USER_SERVICE_URL: 'http://xxx:8010/healthcheck'
+
+# the deposit service healthcheck endpoint
+DEPOSIT_SERVICE_URL: 'http://xxx:8001/healthcheck'
+
+# the firehose service healthcheck endpoint
+FIREHOSE_SERVICE_URL: 'http://firehose2.lib.virginia.edu:8081/firehose2/healthcheck'
