@@ -1,6 +1,6 @@
-<% content_for :title do %>Development Dashboard<% end %>
+<% content_for :title do %><%= "#{ENV['DASHBOARD_TITLE']}" %><% end %>
 <div class="gridster">
-   <center><div style="font-size: 22px">Development Dashboard</div></center>
+   <center><div style="font-size: 22px"><%= "#{ENV['DASHBOARD_TITLE']}" %></div></center>
 
    <ul>
 

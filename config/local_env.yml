@@ -2,6 +2,9 @@
 # Environment specific definitions
 #
 
+# our title
+DASHBOARD_TITLE: 'Development Dashboard'
+
 # the virgo endpoint
 VIRGO_URL: 'http://opacdev.lib.virginia.edu'
 
