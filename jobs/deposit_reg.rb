@@ -1,9 +1,9 @@
 SCHEDULER.every '30s', allow_overlapping: false do
 
-  service_url = ENV[ 'VIRGO_URL' ]
-  data_sink_availability = 'virgo'
-  data_sink_response = 'virgo-time'
-  max_response_time = 1500
+  service_url = ENV[ 'DEPOSITREG_URL' ]
+  data_sink_availability = 'depositreg'
+  data_sink_response = 'depositreg-time'
+  max_response_time = 2000
 
   begin
      start_time = Time.now

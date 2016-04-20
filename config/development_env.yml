@@ -5,17 +5,29 @@
 # our title
 DASHBOARD_TITLE: 'Development Dashboard'
 
-# the virgo endpoint
-VIRGO_URL: 'http://opacdev.lib.virginia.edu'
-
 # the libra endpoint
-LIBRA_URL: 'http://libradev.lib.virginia.edu'
+LIBRA_URL: 'http://docker1.lib.virginia.edu:8040'
+
+# the registration endpoint
+DEPOSITREG_URL: 'http://docker1.lib.virginia.edu:8221'
+
+# the deposit authorization service healthcheck endpoint
+DEPOSIT_AUTH_SERVICE_URL: 'http://docker1.lib.virginia.edu:8001/healthcheck'
+
+# the deposit registration service healthcheck endpoint
+DEPOSIT_REG_SERVICE_URL: 'http://docker1.lib.virginia.edu:8220/healthcheck'
+
+# the entity ID service healthcheck endpoint
+ENTITY_ID_SERVICE_URL: 'http://docker1.lib.virginia.edu:8210/healthcheck'
+
+# the token authorization service healthcheck endpoint
+TOKEN_AUTH_SERVICE_URL: 'http://docker1.lib.virginia.edu:8200/healthcheck'
 
 # the user service healthcheck endpoint
-USER_SERVICE_URL: 'http://docker1.lib.virginia.edu:8010/healthcheck'
+USER_INFO_SERVICE_URL: 'http://docker1.lib.virginia.edu:8010/healthcheck'
 
-# the deposit service healthcheck endpoint
-DEPOSIT_SERVICE_URL: 'http://docker1.lib.virginia.edu:8001/healthcheck'
+# SOLR service endpoint
+SOLR_URL: 'http://docker1.lib.virginia.edu:8041/solr'
 
-# the firehose service healthcheck endpoint
-FIREHOSE_SERVICE_URL: 'http://firehose2test.lib.virginia.edu:8081/firehose2/healthcheck'
+# Fedora service endpoint
+FEDORA_URL: 'http://docker1.lib.virginia.edu:8041/fedora/rest'

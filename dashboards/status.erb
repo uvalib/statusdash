@@ -1,0 +1,52 @@
+<% content_for :title do %><%= "#{ENV['DASHBOARD_TITLE']}" %><% end %>
+<div class="gridster">
+   <center><div style="font-size: 22px"><%= "#{ENV['DASHBOARD_TITLE']}" %></div></center>
+
+   <ul>
+
+     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+       <div data-id="libra-time" data-view="Meter" data-title="Libra" data-min="0" data-max="2000" data-moreinfo="Response time in mS"></div>
+     </li>
+
+     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+       <div data-id="depositreg-time" data-view="Meter" data-title="Registration" data-min="0" data-max="2000" data-moreinfo="Response time in mS"></div>
+     </li>
+
+     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+       <div data-id="libra" data-view="Statusbox" data-title="Libra" data-text="Up"></div>
+     </li>
+
+     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+       <div data-id="depositreg" data-view="Statusbox" data-title="Virgo" data-text="Up"></div>
+     </li>
+
+     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+        <div data-id="deposit-auth-service" data-view="Statusbox" data-title="Deposit Auth Service" data-text="Up"></div>
+      </li>
+
+     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+       <div data-id="entity-id-service" data-view="Statusbox" data-title="Entity Id Service" data-text="Up"></div>
+     </li>
+
+     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+       <div data-id="deposit-reg-service" data-view="Statusbox" data-title="Deposit Registration Service" data-text="Up"></div>
+     </li>
+
+     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+       <div data-id="user-info-service" data-view="Statusbox" data-title="User Info Service" data-text="Up"></div>
+     </li>
+
+     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+       <div data-id="token-auth-service" data-view="Statusbox" data-title="Token Auth Service" data-text="Up"></div>
+     </li>
+
+     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+       <div data-id="solr-service" data-view="Statusbox" data-title="SOLR" data-text="Up"></div>
+     </li>
+
+     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+       <div data-id="fedora-service" data-view="Statusbox" data-title="Fedora" data-text="Up"></div>
+     </li>
+
+   </ul>
+</div>
