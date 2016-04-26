@@ -31,3 +31,6 @@ SOLR_URL: 'http://docker1.lib.virginia.edu:8041/solr'
 
 # Fedora service endpoint
 FEDORA_URL: 'http://docker1.lib.virginia.edu:8041/fedora/rest'
+
+# redis service endpoint
+REDIS_URL: 'docker1.lib.virginia.edu:8379'
