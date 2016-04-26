@@ -1,9 +1,7 @@
 FROM centos:7
 
 RUN yum -y update
-RUN yum -y install ruby
-RUN yum -y install gcc gcc-c++ make automake autoconf curl-devel openssl-devel zlib-devel httpd-devel apr-devel apr-util-devel libxml2 libxml2-devel libxslt libxslt-devel epel-release
-RUN yum -y install ruby-rdoc ruby-devel nodejs
+RUN yum -y install ruby && yum -y install gcc gcc-c++ make automake autoconf curl-devel openssl-devel zlib-devel httpd-devel apr-devel apr-util-devel libxml2 libxml2-devel libxslt libxslt-devel epel-release && yum -y install ruby-rdoc ruby-devel nodejs
 
 RUN echo 'gem: --no-document' >> ~/.gemrc
 RUN gem install bundler
