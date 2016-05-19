@@ -1,6 +1,6 @@
 SCHEDULER.every '30s', allow_overlapping: false do
 
-  service_url = ENV[ 'DEPOSIT_SERVICE_URL' ]
+  service_url = ENV[ 'DEPOSIT_AUTH_SERVICE_URL' ]
   data_sink = 'deposit-auth-service'
 
   begin

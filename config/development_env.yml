@@ -12,7 +12,7 @@ LIBRA_URL: 'http://docker1.lib.virginia.edu:8040'
 DEPOSITREG_URL: 'http://docker1.lib.virginia.edu:8221'
 
 # the deposit authorization service healthcheck endpoint
-DEPOSIT_AUTH_SERVICE_URL: 'http://docker1.lib.virginia.edu:8001/healthcheck'
+DEPOSIT_AUTH_SERVICE_URL: 'http://docker1.lib.virginia.edu:8230/healthcheck'
 
 # the deposit registration service healthcheck endpoint
 DEPOSIT_REG_SERVICE_URL: 'http://docker1.lib.virginia.edu:8220/healthcheck'
