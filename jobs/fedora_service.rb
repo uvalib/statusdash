@@ -1,7 +1,8 @@
 SCHEDULER.every '30s', allow_overlapping: false do
 
-  service_url = ENV[ 'FEDORA_URL' ]
-  data_sink = 'fedora-service'
+  config = CONFIG['FEDORA']
+  service_url = config['url']
+  data_sink = config['id']
 
   begin
      response = Requester.get( service_url )

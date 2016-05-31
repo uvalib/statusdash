@@ -6,31 +6,63 @@
 DASHBOARD_TITLE: 'Development Dashboard'
 
 # the libra endpoint
-LIBRA_URL: 'http://docker1.lib.virginia.edu:8040'
+LIBRA:
+ title: 'Libra'
+ url: 'http://docker1.lib.virginia.edu:8040'
+ id: 'libra'
+ time: 'libra-time'
 
 # the registration endpoint
-DEPOSITREG_URL: 'http://docker1.lib.virginia.edu:8221'
+DEPOSITREG:
+ title: 'Registration'
+ url: 'http://docker1.lib.virginia.edu:8221'
+ id: 'depositreg'
+ time: 'depositreg-time'
 
-# the deposit authorization service healthcheck endpoint
-DEPOSIT_AUTH_SERVICE_URL: 'http://docker1.lib.virginia.edu:8230/healthcheck'
+# the deposit authorization service endpoint
+DEPOSIT_AUTH_SERVICE:
+ title: 'Deposit Auth Service'
+ url: 'http://docker1.lib.virginia.edu:8230/healthcheck'
+ id: 'deposit-auth-service'
 
-# the deposit registration service healthcheck endpoint
-DEPOSIT_REG_SERVICE_URL: 'http://docker1.lib.virginia.edu:8220/healthcheck'
+# the deposit registration service endpoint
+DEPOSIT_REG_SERVICE:
+ title: 'Deposit Registration Service'
+ url: 'http://docker1.lib.virginia.edu:8220/healthcheck'
+ id: 'deposit-reg-service'
 
-# the entity ID service healthcheck endpoint
-ENTITY_ID_SERVICE_URL: 'http://docker1.lib.virginia.edu:8210/healthcheck'
+# the entity ID service endpoint
+ENTITY_ID_SERVICE:
+ title: 'Entity Id Service'
+ url: 'http://docker1.lib.virginia.edu:8210/healthcheck'
+ id: 'entity-id-service'
 
-# the token authorization service healthcheck endpoint
-TOKEN_AUTH_SERVICE_URL: 'http://docker1.lib.virginia.edu:8200/healthcheck'
+# the token authorization service endpoint
+TOKEN_AUTH_SERVICE:
+ title: 'Token Auth Service'
+ url: 'http://docker1.lib.virginia.edu:8200/healthcheck'
+ id: 'token-auth-service'
 
-# the user service healthcheck endpoint
-USER_INFO_SERVICE_URL: 'http://docker1.lib.virginia.edu:8010/healthcheck'
+# the user service endpoint
+USER_INFO_SERVICE:
+ title: 'User Info Service'
+ url: 'http://docker1.lib.virginia.edu:8010/healthcheck'
+ id: 'user-info-service'
 
 # SOLR service endpoint
-SOLR_URL: 'http://docker1.lib.virginia.edu:8041/solr'
+SOLR:
+ title: 'SOLR'
+ url: 'http://docker1.lib.virginia.edu:8041/solr'
+ id: 'solr-service'
 
 # Fedora service endpoint
-FEDORA_URL: 'http://docker1.lib.virginia.edu:8041/fedora/rest'
+FEDORA:
+ title: 'Fedora'
+ url: 'http://docker1.lib.virginia.edu:8041/fedora/rest'
+ id: 'fedora-service'
 
 # redis service endpoint
-REDIS_URL: 'docker1.lib.virginia.edu:8379'
+REDIS:
+ title: 'Redis'
+ url: 'docker1.lib.virginia.edu:8379'
+ id: 'redis-service'

@@ -8,10 +8,7 @@ configure do
   # load environment variables from config/local_env.yml if it exists
   #
   env_file = File.join( 'config', "#{ENV['RAILS_ENV']}_env.yml")
-  yaml_file = File.exists?(env_file) ? YAML.load(File.open(env_file)) : nil
-  yaml_file.each do |key, value|
-    ENV[key.to_s] = value
-  end if yaml_file
+  CONFIG = File.exists?(env_file) ? YAML.load(File.open(env_file)) : nil
 
   set :auth_token, 'YOUR_AUTH_TOKEN'
 

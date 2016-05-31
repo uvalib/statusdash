@@ -1,7 +1,8 @@
 SCHEDULER.every '30s', allow_overlapping: false do
 
-  service_url = ENV[ 'ENTITY_ID_SERVICE_URL' ]
-  data_sink = 'entity-id-service'
+  config = CONFIG['ENTITY_ID_SERVICE']
+  service_url = config['url']
+  data_sink = config['id']
 
   begin
      response = Requester.get( service_url )

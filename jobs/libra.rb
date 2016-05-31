@@ -1,8 +1,10 @@
 SCHEDULER.every '30s', allow_overlapping: false do
 
-  service_url = ENV[ 'LIBRA_URL' ]
-  data_sink_availability = 'libra'
-  data_sink_response = 'libra-time'
+  config = CONFIG['LIBRA']
+  service_url = config['url']
+  data_sink_availability = config['id']
+  data_sink_response = config['time']
+
   max_response_time = 2000
 
   begin

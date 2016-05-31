@@ -1,7 +1,8 @@
 SCHEDULER.every '30s', allow_overlapping: false do
 
-  service_url = ENV[ 'SOLR_URL' ]
-  data_sink = 'solr-service'
+  config = CONFIG['SOLR']
+  service_url = config['url']
+  data_sink = config['id']
 
   begin
      response = Requester.get( service_url )

@@ -1,7 +1,8 @@
 SCHEDULER.every '30s', allow_overlapping: false do
 
-  service_url = ENV[ 'REDIS_URL' ]
-  data_sink = 'redis-service'
+  config = CONFIG['REDIS']
+  service_url = config['url']
+  data_sink = config['id']
 
   begin
      tokens = service_url.split( ':' )
