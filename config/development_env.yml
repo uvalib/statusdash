@@ -1,67 +1,67 @@
 #
-# Environment specific definitions
+# Environment specific definitions (development mode)
 #
 
 # our title
-DASHBOARD_TITLE: 'Development Dashboard'
+DASHBOARD_TITLE: 'Libra2 Development Status Dashboard'
 
-# the libra endpoint
+# the libra endpoint(s)
 LIBRA:
  title: 'Libra'
  url: 'http://docker1.lib.virginia.edu:8040'
  id: 'libra'
  time: 'libra-time'
 
-# the registration endpoint
+# the registration endpoint(s)
 DEPOSITREG:
  title: 'Registration'
  url: 'http://docker1.lib.virginia.edu:8221'
  id: 'depositreg'
  time: 'depositreg-time'
 
-# the deposit authorization service endpoint
+# the deposit authorization service endpoint(s)
 DEPOSIT_AUTH_SERVICE:
  title: 'Deposit Auth Service'
  url: 'http://docker1.lib.virginia.edu:8230/healthcheck'
  id: 'deposit-auth-service'
 
-# the deposit registration service endpoint
+# the deposit registration service endpoint(s)
 DEPOSIT_REG_SERVICE:
  title: 'Deposit Registration Service'
  url: 'http://docker1.lib.virginia.edu:8220/healthcheck'
  id: 'deposit-reg-service'
 
-# the entity ID service endpoint
+# the entity ID service endpoint(s)
 ENTITY_ID_SERVICE:
  title: 'Entity Id Service'
  url: 'http://docker1.lib.virginia.edu:8210/healthcheck'
  id: 'entity-id-service'
 
-# the token authorization service endpoint
+# the token authorization service endpoint(s)
 TOKEN_AUTH_SERVICE:
  title: 'Token Auth Service'
  url: 'http://docker1.lib.virginia.edu:8200/healthcheck'
  id: 'token-auth-service'
 
-# the user service endpoint
+# the user service endpoint(s)
 USER_INFO_SERVICE:
  title: 'User Info Service'
  url: 'http://docker1.lib.virginia.edu:8010/healthcheck'
  id: 'user-info-service'
 
-# SOLR service endpoint
+# SOLR service endpoint(s)
 SOLR:
  title: 'SOLR'
  url: 'http://docker1.lib.virginia.edu:8041/solr'
  id: 'solr-service'
 
-# Fedora service endpoint
+# Fedora service endpoint(s)
 FEDORA:
  title: 'Fedora'
  url: 'http://docker1.lib.virginia.edu:8041/fedora/rest'
  id: 'fedora-service'
 
-# redis service endpoint
+# redis service endpoint(s)
 REDIS:
  title: 'Redis'
  url: 'docker1.lib.virginia.edu:8379'
