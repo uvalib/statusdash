@@ -8,7 +8,19 @@ configure do
   # load environment variables from config/local_env.yml if it exists
   #
   env_file = File.join( 'config', "#{ENV['RAILS_ENV']}_env.yml")
-  CONFIG = File.exists?(env_file) ? YAML.load(File.open(env_file)) : nil
+  #CONFIG = File.exists?(env_file) ? YAML.load(File.open(env_file)) : nil
+
+  begin
+    config_erb = ERB.new( IO.read( env_file ) ).result( binding )
+  rescue StandardError => e
+    raise( "#{filename} could not be parsed with ERB. \n#{e.inspect}" )
+  end
+
+  begin
+    CONFIG = YAML.load( config_erb )
+  rescue Psych::SyntaxError => e
+    raise "#{filename} could not be parsed as YAML. \nError #{e.message}"
+  end
 
   set :auth_token, 'YOUR_AUTH_TOKEN'
 
