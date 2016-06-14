@@ -20,7 +20,7 @@ configure do
   begin
     CONFIG = YAML.load( config_erb )
   rescue Psych::SyntaxError => e
-    raise "#{filename} could not be parsed as YAML. \nError #{e.message}"
+    raise "#{env_file} could not be parsed as YAML. \nError #{e.message}"
   end
 
   set :auth_token, 'YOUR_AUTH_TOKEN'
