@@ -4,11 +4,12 @@ configure do
 
   ENV['RAILS_ENV'] ||= 'development'
 
+  ENV[ 'DASHBOARD_TITLE' ] ||= 'Development Dashboard'
+
   #
   # load environment variables from config/local_env.yml if it exists
   #
-  env_file = File.join( 'config', "#{ENV['RAILS_ENV']}_env.yml")
-  #CONFIG = File.exists?(env_file) ? YAML.load(File.open(env_file)) : nil
+  env_file = File.join( 'config', 'local_env.yml' )
 
   begin
     config_erb = ERB.new( IO.read( env_file ) ).result( binding )
