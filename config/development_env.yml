@@ -38,8 +38,8 @@ DEPOSIT_REG_SERVICE:
 # the entity ID service endpoint(s)
 ENTITY_ID_SERVICE:
  title: 'Entity Id Service'
- url: 'http://docker1.lib.virginia.edu:8210/healthcheck'
- #url: <%= "#{ENV['ENTITYID_URL']}/healthcheck" %>
+ #url: 'http://docker1.lib.virginia.edu:8210/healthcheck'
+ url: <%= "#{ENV['ENTITYID_URL']}/healthcheck" %>
  id: 'entity-id-service'
 
 # the token authorization service endpoint(s)
