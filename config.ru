@@ -4,7 +4,7 @@ configure do
 
   ENV['RAILS_ENV'] ||= 'development'
 
-  ENV[ 'DASHBOARD_TITLE' ] ||= 'Development Dashboard'
+  ENV[ 'TITLE_PREFIX' ] ||= 'Development'
 
   #
   # load environment variables from config/local_env.yml if it exists
