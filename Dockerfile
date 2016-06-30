@@ -1,10 +1,14 @@
 FROM alpine:3.4
 
-# Add bash cos we dont get by default
-RUN apk --update add bash ruby ruby-dev openssl-dev build-base nodejs
+# Add necessary packages
+RUN apk --update add bash tzinfo ruby ruby-dev openssl-dev build-base nodejs
 
 # Create the run user and group
 RUN addgroup webservice && adduser webservice -G webservice -D
+
+# set the timezone appropriatly
+ENV TZ=EST5EDT
+RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Specify home 
 ENV APP_HOME /statusdash
