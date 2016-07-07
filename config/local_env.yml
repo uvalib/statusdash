@@ -5,7 +5,7 @@
 # the libra endpoint(s)
 LIBRA:
  title: 'Libra'
- url: <%= "#{ENV['LIBRA2_WEBAPP']/healthcheck" %>
+ url: <%= "#{ENV['LIBRA2_WEBAPP']}/healthcheck" %>
  id: 'libra'
  time: 'libra-time'
 
