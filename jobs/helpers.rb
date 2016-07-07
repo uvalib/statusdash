@@ -2,8 +2,9 @@
 #
 #
 
-def production_mode?
-  return ENV['RAILS_ENV'] == 'production'
+# how frequently to poll the services
+def polltime
+  return '60s'
 end
 
 #

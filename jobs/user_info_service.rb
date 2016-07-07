@@ -1,4 +1,4 @@
-SCHEDULER.every '30s', allow_overlapping: false do
+SCHEDULER.every polltime( ), allow_overlapping: false do
 
   config = CONFIG['USER_INFO_SERVICE']
 
