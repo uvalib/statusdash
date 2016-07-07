@@ -5,14 +5,14 @@
 # the libra endpoint(s)
 LIBRA:
  title: 'Libra'
- url: <%= ENV['LIBRA2_WEBAPP'] %>
+ url: <%= "#{ENV['LIBRA2_WEBAPP']/healthcheck" %>
  id: 'libra'
  time: 'libra-time'
 
 # the registration endpoint(s)
 DEPOSITREG:
  title: 'Registration'
- url: <%= ENV['OPTREG_WEBAPP'] %>
+ url: <%= "#{ENV['OPTREG_WEBAPP']}/healthcheck" %>
  id: 'depositreg'
  time: 'depositreg-time'
 
