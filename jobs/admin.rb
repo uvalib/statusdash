@@ -1,6 +1,6 @@
 SCHEDULER.every '60s', allow_overlapping: false do
 
-  config = CONFIG['DEPOSITREG']
+  config = CONFIG['ADMIN']
   max_response_time = 2000
 
   service_url = config['url']

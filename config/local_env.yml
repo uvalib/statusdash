@@ -6,14 +6,17 @@
 LIBRA:
  title: 'Libra'
  url: <%= "#{ENV['LIBRA2_WEBAPP']}/healthcheck" %>
- id: 'libra'
  time: 'libra-time'
+
+ADMIN:
+ title: 'Admin'
+ url: <%= "#{ENV['ADMIN_WEBAPP']}/healthcheck" %>
+ time: 'admin-time'
 
 # the registration endpoint(s)
 DEPOSITREG:
  title: 'Registration'
  url: <%= "#{ENV['OPTREG_WEBAPP']}/healthcheck" %>
- id: 'depositreg'
  time: 'depositreg-time'
 
 # the deposit authorization service endpoint(s)
