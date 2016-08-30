@@ -11,6 +11,7 @@ SCHEDULER.every '60s', allow_overlapping: false do
      send_event( data_sink, { text: 'Up' })
   rescue => e
     send_event( data_sink, { text: 'Down' })
+    puts "ERROR #{config['title']} returns error: #{e.to_s}"
   end
 
 end
