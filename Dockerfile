@@ -34,4 +34,10 @@ USER webservice
 
 # port and run command
 EXPOSE 3030
-CMD dashing start
+CMD scripts/entry.sh
+
+# Move in necessary helper scripts
+COPY data/container_bash_profile /home/webservice/.profile
+
+# Add the build tag
+COPY buildtag.* $APP_HOME/

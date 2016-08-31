@@ -1,0 +1,8 @@
+.dockerignore
+.gitignore
+.git
+.idea
+env.*
+scripts/docker
+scripts/helpers
+data/*

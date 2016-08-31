@@ -19,7 +19,7 @@ docker rmi $NAMESPACE/$INSTANCE:current
 # tag the latest as the current
 docker tag -f $NAMESPACE/$INSTANCE:latest $NAMESPACE/$INSTANCE:current
 
-docker run -d -p 8999:3030 --name $INSTANCE $NAMESPACE/$INSTANCE:latest
+docker run -d -p 8999:3030 -e RAILS_ENV=production --name $INSTANCE $NAMESPACE/$INSTANCE:latest
 
 # return status
 exit $?
