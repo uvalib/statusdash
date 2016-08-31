@@ -11,11 +11,11 @@ SCHEDULER.every '60s', allow_overlapping: false do
         send_event( data_sink, { text: 'Up' })
      else
         send_event( data_sink, { text: 'Down' })
-        puts "ERROR #{config['title']} returns status: #{response.code}"
+        LOGGER.error "#{config['title']} returns status: #{response.code}"
      end
   rescue => e
     send_event( data_sink, { text: 'Down' })
-    puts "ERROR #{config['title']} returns error: #{e.to_s}"
+    LOGGER.error "#{config['title']} returns error: #{e.to_s}"
   end
 
 end

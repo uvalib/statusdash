@@ -23,6 +23,10 @@ configure do
     raise "#{env_file} could not be parsed as YAML. \nError #{e.message}"
   end
 
+  # enable basic logging
+  LOGGER = Logger.new( STDOUT )
+  #LOGGER.level = Logger::DEBUG unless ENV['RACK_ENV'] == 'production'
+
   set :auth_token, 'YOUR_AUTH_TOKEN'
 
   helpers do
