@@ -5,4 +5,3 @@
 env.*
 scripts/docker
 scripts/helpers
-data/*
