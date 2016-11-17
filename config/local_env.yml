@@ -37,6 +37,12 @@ ENTITY_ID_SERVICE:
  url: <%= "#{ENV['ENTITYID_URL']}/healthcheck" %>
  id: 'entity-id-service'
 
+# the ORCID access service endpoint(s)
+ORCID_ACCESS_SERVICE:
+ title: 'ORCID Access Service'
+ url: <%= "#{ENV['ORCIDACCESS_URL']}/healthcheck" %>
+ id: 'orcid-access-service'
+
 # the token authorization service endpoint(s)
 TOKEN_AUTH_SERVICE:
  title: 'Token Auth Service'
