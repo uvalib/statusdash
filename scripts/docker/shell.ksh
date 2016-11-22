@@ -7,4 +7,4 @@ fi
 INSTANCE=statusdash
 NAMESPACE=uvadave
 
-docker run -ti -p 8999:3030 $NAMESPACE/$INSTANCE /bin/bash
+docker run -ti -p 8999:3030 $NAMESPACE/$INSTANCE /bin/bash -l
