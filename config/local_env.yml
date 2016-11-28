@@ -4,12 +4,12 @@
 
 # the libra endpoint(s)
 LIBRA:
- title: 'Libra'
- url: <%= "#{ENV['LIBRA2_WEBAPP']}/healthcheck" %>
+ title: 'Libra ETD'
+ url: <%= "#{ENV['LIBRA_ETD_WEBAPP']}/healthcheck" %>
  time: 'libra-time'
 
 ADMIN:
- title: 'Admin'
+ title: 'ETD Admin'
  url: <%= "#{ENV['ADMIN_WEBAPP']}/healthcheck" %>
  time: 'admin-time'
 
