@@ -10,6 +10,14 @@ RUN addgroup webservice && adduser webservice -G webservice -D
 ENV TZ=EST5EDT
 RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
+# install necessary gems
+RUN gem install bundler io-console --no-ri --no-rdoc
+
+# Copy the Gemfile into the image and temporarily set the working directory to where they are.
+WORKDIR /tmp
+ADD Gemfile Gemfile
+RUN bundle install
+
 # Specify home 
 ENV APP_HOME /statusdash
 WORKDIR $APP_HOME
@@ -19,14 +27,6 @@ RUN chown -R webservice $APP_HOME && chgrp -R webservice $APP_HOME
 
 # update the path
 ENV PATH $PATH:~/bin
-
-# install necessary gems
-RUN gem install bundler io-console --no-ri --no-rdoc
-
-# Copy the Gemfile into the image and temporarily set the working directory to where they are.
-WORKDIR /tmp
-ADD Gemfile Gemfile
-RUN bundle install
 
 # add necessarey assets
 ADD . $APP_HOME
