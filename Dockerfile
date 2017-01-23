@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:3.5
 
 # update the packages
 RUN apk update && apk upgrade && apk add bash tzdata ruby ruby-dev openssl-dev build-base nodejs ca-certificates
@@ -21,9 +21,12 @@ RUN chown -R webservice $APP_HOME && chgrp -R webservice $APP_HOME
 ENV PATH $PATH:~/bin
 
 # install necessary gems
-RUN echo 'gem: --no-document' >> ~/.gemrc
-RUN gem install bundler
-RUN gem install dashing io-console
+RUN gem install bundler io-console --no-ri --no-rdoc
+
+# Copy the Gemfile into the image and temporarily set the working directory to where they are.
+WORKDIR /tmp
+ADD Gemfile Gemfile
+RUN bundle install
 
 # add necessarey assets
 ADD . $APP_HOME
