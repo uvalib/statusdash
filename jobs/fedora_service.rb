@@ -6,7 +6,7 @@ SCHEDULER.every '60s', allow_overlapping: false do
 
   begin
      response = Requester.get( service_url )
-     if response.code == 200 || response.code == 401
+     if response.code == 200
         send_event( data_sink, { text: 'Up' })
      else
         send_event( data_sink, { text: 'Down' })

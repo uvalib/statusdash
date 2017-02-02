@@ -64,7 +64,7 @@ SOLR:
 # Fedora service endpoint(s)
 FEDORA:
  title: 'Fedora'
- url: <%= ENV['FEDORA_URL'] %>
+ url: <%= ENV['FEDORA_USER'] && ENV['FEDORA_PASSWD'] && ENV['FEDORA_URL'] ? "http://#{ENV['FEDORA_USER']}:#{ENV['FEDORA_PASSWD']}@#{ENV['FEDORA_URL'].gsub( "http://", "" )}" : '' %>
  id: 'fedora-service'
 
 # redis service endpoint(s)
