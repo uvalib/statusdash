@@ -70,5 +70,5 @@ FEDORA:
 # redis service endpoint(s)
 REDIS:
  title: 'Redis'
- url: <%= ENV['REDIS_PASSWD'] && ENV['REDIS_HOST'] && ENV['REDIS_PORT'] ? "redis://:#{ENV['REDIS_PASSWD']}@#{ENV['REDIS_HOST']}:#{ENV['REDIS_PORT']}" : '' %>
+ url: <%= ENV['REDIS_PASSWD'] && ENV['REDIS_HOST'] && ENV['REDIS_PORT'] && ENV['REDIS_DB'] ? "redis://:#{ENV['REDIS_PASSWD']}@#{ENV['REDIS_HOST']}:#{ENV['REDIS_PORT']}/#{ENV['REDIS_DB']}" : '' %>
  id: 'redis-service'
