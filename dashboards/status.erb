@@ -4,7 +4,9 @@
 
   <ul>
 
-     <% services = ['LIBRA','ADMIN','DEPOSITREG'] %>
+     <% services = [ 'LIBRA',
+                     'ADMIN',
+                     'DEPOSITREG'] %>
      <% services.each do |key| %>
 
         <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
@@ -13,7 +15,15 @@
 
      <% end %>
 
-     <% services = ['DEPOSIT_AUTH_SERVICE','ENTITY_ID_SERVICE','DEPOSIT_REG_SERVICE','ORCID_ACCESS_SERVICE','TOKEN_AUTH_SERVICE','USER_INFO_SERVICE','SOLR','FEDORA','REDIS'] %>
+     <% services = [ 'SOLR',
+                     'FEDORA',
+                     'REDIS',
+                     'DEPOSIT_AUTH_SERVICE',
+                     'DEPOSIT_REG_SERVICE',
+                     'ENTITY_ID_SERVICE',
+                     'ORCID_ACCESS_SERVICE',
+                     'TOKEN_AUTH_SERVICE',
+                     'USER_INFO_SERVICE'] %>
      <% services.each do |key| %>
 
         <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
