@@ -1,10 +1,10 @@
-<% content_for :title do %><%= "#{ENV[ 'TITLE_PREFIX' ]} Dashboard" %><% end %>
+<% content_for :title do %><%= "#{ENV[ 'TITLE_PREFIX' ]} Libra ETD Dashboard" %><% end %>
 <div class="gridster">
-   <center><div style="font-size: 22px"><%= "#{ENV[ 'TITLE_PREFIX' ]} Dashboard" %></div></center>
+   <center><div style="font-size: 22px"><a href="/services" class="pull-left">&nbsp;previous</a><%= "#{ENV[ 'TITLE_PREFIX' ]} Libra ETD Dashboard" %><a href="/libraoc" class="pull-right">next&nbsp;</a></div></center>
 
   <ul>
 
-     <% services = [ 'LIBRA',
+     <% services = [ 'LIBRA_ETD',
                      'ADMIN',
                      'DEPOSITREG'] %>
      <% services.each do |key| %>
@@ -15,15 +15,7 @@
 
      <% end %>
 
-     <% services = [ 'SOLR',
-                     'FEDORA',
-                     'REDIS',
-                     'DEPOSIT_AUTH_SERVICE',
-                     'DEPOSIT_REG_SERVICE',
-                     'ENTITY_ID_SERVICE',
-                     'ORCID_ACCESS_SERVICE',
-                     'TOKEN_AUTH_SERVICE',
-                     'USER_INFO_SERVICE'] %>
+     <% services = [ 'SOLR', 'FEDORA' ] %>
      <% services.each do |key| %>
 
         <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
@@ -31,6 +23,12 @@
         </li>
 
      <% end %>
+
+    <% 1.times do || %>
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+          <div data-id="blank" data-view="Comments" data-title="Blank" data-text=""></div>
+        </li>
+    <% end %>
 
    </ul>
 </div>

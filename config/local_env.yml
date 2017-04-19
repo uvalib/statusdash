@@ -2,12 +2,13 @@
 # Environment specific definitions
 #
 
-# the libra endpoint(s)
-LIBRA:
+# the libra ETD endpoint(s)
+LIBRA_ETD:
  title: 'Libra ETD'
  url: <%= "#{ENV['LIBRA_ETD_WEBAPP']}/healthcheck" %>
- time: 'libra-time'
+ time: 'libra-etd-time'
 
+# libra ETD admin endpoint(s)
 ADMIN:
  title: 'ETD Admin'
  url: <%= "#{ENV['ADMIN_WEBAPP']}/healthcheck" %>
@@ -18,6 +19,12 @@ DEPOSITREG:
  title: 'Registration'
  url: <%= "#{ENV['OPTREG_WEBAPP']}/healthcheck" %>
  time: 'depositreg-time'
+
+# the libra OC endpoint(s)
+LIBRA_OC:
+ title: 'Libra OC'
+ url: <%= "#{ENV['LIBRA_OC_WEBAPP']}/healthcheck" %>
+ time: 'libra-oc-time'
 
 # the deposit authorization service endpoint(s)
 DEPOSIT_AUTH_SERVICE:

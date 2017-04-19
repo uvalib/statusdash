@@ -29,6 +29,9 @@ configure do
 
   set :auth_token, 'YOUR_AUTH_TOKEN'
 
+  # default route
+  set :default_dashboard, 'services'
+
   helpers do
     def protected!
      # Put any authentication code you want in here.
