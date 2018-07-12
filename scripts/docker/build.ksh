@@ -11,6 +11,9 @@ echo "*****************************************"
 INSTANCE=statusdash
 NAMESPACE=uvadave
 
+# pull base image to ensure we have the latest
+docker pull alpine:3.8
+
 # build the image
 docker build -t $NAMESPACE/$INSTANCE .
 
