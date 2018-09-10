@@ -65,7 +65,7 @@ USER_INFO_SERVICE:
 # SOLR service endpoint(s)
 SOLR:
  title: 'SOLR'
- url: <%= ENV['SOLR_URL'] %>
+ url: <%= "#{ENV['SOLR_URL']}/#/" %>
  id: 'solr-service'
 
 # Fedora service endpoint(s)
