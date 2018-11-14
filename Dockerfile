@@ -4,7 +4,7 @@ FROM alpine:3.8
 RUN apk update && apk upgrade && apk add bash tzdata ruby ruby-dev openssl-dev build-base nodejs ca-certificates
 
 # Create the run user and group
-RUN addgroup webservice && adduser webservice -G webservice -D
+RUN addgroup --gid 18570 sse && adduser --uid 1984 docker -G sse -D
 
 # set the timezone appropriatly
 ENV TZ=EST5EDT
@@ -23,7 +23,7 @@ ENV APP_HOME /statusdash
 WORKDIR $APP_HOME
 
 # update ownership as necessary
-RUN chown -R webservice $APP_HOME && chgrp -R webservice $APP_HOME
+RUN chown -R docker $APP_HOME && chgrp -R sse $APP_HOME
 
 # update the path
 ENV PATH $PATH:~/bin
@@ -33,14 +33,14 @@ ADD . $APP_HOME
 RUN bundle install
 
 # specify the user
-USER webservice
+USER docker
 
 # port and run command
 EXPOSE 3030
 CMD scripts/entry.sh
 
 # Move in necessary helper scripts
-COPY data/container_bash_profile /home/webservice/.profile
+COPY data/container_bash_profile /home/docker/.profile
 
 # Add the build tag
 COPY buildtag.* $APP_HOME/
