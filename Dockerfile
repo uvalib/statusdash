@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.9
 
 # update the packages
 RUN apk update && apk upgrade && apk add bash tzdata ruby ruby-dev openssl-dev build-base nodejs ca-certificates
@@ -11,16 +11,16 @@ ENV TZ=EST5EDT
 RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # install necessary gems
-RUN gem install bundler io-console --no-ri --no-rdoc
-
-# Copy the Gemfile into the image and temporarily set the working directory to where they are.
-WORKDIR /tmp
-ADD Gemfile Gemfile
-RUN bundle install
+#RUN gem install bundler io-console --no-ri --no-rdoc
+RUN gem install bundler -v 1.17.3 --no-ri --no-rdoc && gem install io-console --no-ri --no-rdoc
 
 # Specify home 
 ENV APP_HOME /statusdash
 WORKDIR $APP_HOME
+
+# Copy the Gemfile into the image and install dependencies
+ADD Gemfile Gemfile.lock ./
+RUN bundle install --jobs=4 --without=["development" "test"] --no-cache
 
 # update ownership as necessary
 RUN chown -R docker $APP_HOME && chgrp -R sse $APP_HOME
@@ -30,7 +30,6 @@ ENV PATH $PATH:~/bin
 
 # add necessarey assets
 ADD . $APP_HOME
-RUN bundle install
 
 # specify the user
 USER docker
