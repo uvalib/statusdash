@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM alpine:3.10
 
 # update the packages
 RUN apk update && apk upgrade && apk add bash tzdata ruby ruby-dev openssl-dev build-base nodejs ca-certificates
