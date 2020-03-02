@@ -31,7 +31,7 @@ ENV PATH $PATH:~/bin
 ADD . $APP_HOME
 
 # port and run command
-EXPOSE 3030
+EXPOSE 8080
 CMD scripts/entry.sh
 
 # Move in necessary helper scripts
