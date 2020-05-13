@@ -13,16 +13,7 @@
 
      <% end %>
 
-     <% services = [ 'SOLR', 'FEDORA' ] %>
-     <% services.each do |key| %>
-
-        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-           <div data-id="<%= "#{CONFIG[key]['id']}" %>" data-view="Statusbox" data-title="<%= "#{CONFIG[key]['title']}" %>" data-text="Down"></div>
-        </li>
-
-     <% end %>
-
-    <% 3.times do || %>
+    <% 5.times do || %>
         <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
           <div data-id="blank" data-view="Comments" data-title="Blank" data-text=""></div>
         </li>

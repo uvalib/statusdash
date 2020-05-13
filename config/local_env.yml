@@ -50,12 +50,6 @@ ORCID_ACCESS_SERVICE:
  url: <%= "#{ENV['ORCIDACCESS_URL']}/healthcheck" %>
  id: 'orcid-access-service'
 
-# the token authorization service endpoint(s)
-TOKEN_AUTH_SERVICE:
- title: 'Token Auth Service'
- url: <%= "#{ENV['TOKENAUTH_URL']}/healthcheck" %>
- id: 'token-auth-service'
-
 # the user service endpoint(s)
 USER_INFO_SERVICE:
  title: 'User Info Service'

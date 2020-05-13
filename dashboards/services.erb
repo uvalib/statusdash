@@ -8,9 +8,7 @@
                      'DEPOSIT_REG_SERVICE',
                      'ENTITY_ID_SERVICE',
                      'ORCID_ACCESS_SERVICE',
-                     'TOKEN_AUTH_SERVICE',
-                     'USER_INFO_SERVICE',
-                     'REDIS' ] %>
+                     'USER_INFO_SERVICE' ] %>
      <% services.each do |key| %>
 
         <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
@@ -19,10 +17,26 @@
 
      <% end %>
 
-    <% 5.times do || %>
+    <% 1.times do || %>
         <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
             <div data-id="blank" data-view="Comments" data-title="Blank" data-text=""></div>
         </li>
+    <% end %>
+
+    <% services = [ 'SOLR',
+                    'REDIS' ] %>
+    <% services.each do |key| %>
+
+      <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+        <div data-id="<%= "#{CONFIG[key]['id']}" %>" data-view="Statusbox" data-title="<%= "#{CONFIG[key]['title']}" %>" data-text="Down"></div>
+      </li>
+
+    <% end %>
+
+    <% 4.times do || %>
+      <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+        <div data-id="blank" data-view="Comments" data-title="Blank" data-text=""></div>
+      </li>
     <% end %>
 
    </ul>
