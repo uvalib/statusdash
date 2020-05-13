@@ -5,7 +5,6 @@ SCHEDULER.every '60s', allow_overlapping: false do
                'ENTITY_ID_SERVICE',
                'FEDORA',
                'ORCID_ACCESS_SERVICE',
-               'REDIS',
                'SOLR',
                'USER_INFO_SERVICE' ]
 
