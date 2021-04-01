@@ -2,7 +2,6 @@ SCHEDULER.every '60s', allow_overlapping: false do
 
   services = [ 'DEPOSIT_AUTH_SERVICE',
                'DEPOSIT_REG_SERVICE',
-               'ENTITY_ID_SERVICE',
                'FEDORA',
                'ORCID_ACCESS_SERVICE',
                'SOLR',

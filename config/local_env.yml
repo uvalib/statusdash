@@ -38,12 +38,6 @@ DEPOSIT_REG_SERVICE:
  url: <%= "#{ENV['DEPOSITREG_URL']}/healthcheck" %>
  id: 'deposit-reg-service'
 
-# the entity ID service endpoint(s)
-ENTITY_ID_SERVICE:
- title: 'Entity Id Service'
- url: <%= "#{ENV['ENTITYID_URL']}/healthcheck" %>
- id: 'entity-id-service'
-
 # the ORCID access service endpoint(s)
 ORCID_ACCESS_SERVICE:
  title: 'ORCID Access Service'
