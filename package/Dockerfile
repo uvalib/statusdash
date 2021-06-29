@@ -1,7 +1,7 @@
 FROM alpine:3.13
 
 # update the packages
-RUN apk update && apk upgrade && apk add bash tzdata ruby ruby-dev openssl-dev build-base nodejs ca-certificates
+RUN apk update && apk upgrade && apk add bash tzdata ruby ruby-dev openssl-dev build-base nodejs ca-certificates && rm -fr /var/cache/apk/*
 
 # Create the run user and group
 RUN addgroup --gid 18570 sse && adduser --uid 1984 docker -G sse -D
@@ -46,3 +46,7 @@ RUN test -n "$BUILD_TAG" && touch $APP_HOME/buildtag.build-$BUILD_TAG || touch $
 
 # Specify the user
 USER docker
+
+#
+# end of file
+#
