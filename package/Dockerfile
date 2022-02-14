@@ -1,7 +1,7 @@
-FROM alpine:3.13
+FROM public.ecr.aws/docker/library/ruby:2.6.9-alpine3.15
 
 # update the packages
-RUN apk update && apk upgrade && apk add bash tzdata ruby ruby-dev openssl-dev build-base nodejs ca-certificates && rm -fr /var/cache/apk/*
+RUN apk update && apk upgrade && apk add bash tzdata build-base nodejs ca-certificates && rm -fr /var/cache/apk/*
 
 # Create the run user and group
 RUN addgroup --gid 18570 sse && adduser --uid 1984 docker -G sse -D
